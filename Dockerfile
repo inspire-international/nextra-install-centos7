@@ -26,9 +26,9 @@ RUN systemctl enable rsyslog
 RUN yum install -y gcc make ksh
 RUN yum -y install java-1.8.0-openjdk-devel.x86_64
 
-RUN wget http://www.inspire-intl.com/product/nextra/download/nextra-6.0.0.3-install-centos7.x86_64.tgz -O /tmp/nextra-6.0.0.3-install-centos7.x86_64.tgz
+RUN wget http://www.inspire-intl.com/product/nextra/download/nextra-6.1.0.0-install-centos7.x86_64.tgz -O /tmp/nextra-6.1.0.0-install-centos7.x86_64.tgz
 RUN mkdir -p /home/nextra
-RUN tar xvfz /tmp/nextra-6.0.0.3-install-centos7.x86_64.tgz -C /home/nextra
+RUN tar xvfz /tmp/nextra-6.1.0.0-install-centos7.x86_64.tgz -C /home/nextra
 
 ENV ODEDIR /home/nextra/tcp
 ENV PATH "$PATH:$ODEDIR/bin:$ODEDIR/../cmn/bin"
