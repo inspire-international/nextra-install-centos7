@@ -25,6 +25,29 @@ Software: Docker
     $./run.sh 
 ```
 
+4) stop the container.
+
+
+```sh
+
+    $./stop.sh
+
+```
+
+
+
+5) From 2nd time, use start.sh to start the container.
+
+
+
+```sh
+
+    $./start.sh
+
+```
+
+
+
 # Test Drive
 
 1) kick the login.sh to log into the container.
