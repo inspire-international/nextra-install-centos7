@@ -52,5 +52,8 @@ RUN cd /home/nextra/build/Nextra/src && ./build.sh all
 RUN cd /home/nextra/build/Nextra/src && ./build.sh install
 RUN cd $ODEDIR/../samples/nextra-rest-server/java/standard && ./build.sh
 
+RUN mkdir /tmp/options
+COPY options/* /tmp/options/
+
 ADD supervisord.conf /etc/supervisord.conf
 CMD ["/usr/bin/supervisord"]
