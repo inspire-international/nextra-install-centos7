@@ -23,7 +23,7 @@ RUN systemctl enable crond
 RUN systemctl enable rsyslog
 
 # Download and deploy gradle to /opt/gradle-2.8
-RUN wget https://services.gradle.org/distributions/gradle-2.8-bin.zip -O /tmp/gradle-2.8-bin.zip
+RUN wget --no-check-certificate https://services.gradle.org/distributions/gradle-2.8-bin.zip -O /tmp/gradle-2.8-bin.zip
 RUN unzip /tmp/gradle-2.8-bin.zip -d /opt
 ENV GRADLE_HOME /opt/gradle-2.8
 
