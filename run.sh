@@ -1,3 +1,16 @@
 #!/bin/sh
-#sudo docker rm nextra
-sudo docker run --name nextra --privileged -i -t -d -p 50080:80 -p 39001:39001 -p 39002:39002 centos7_nextra /sbin/init
+
+CONTAINER_NAME=nextra
+
+sudo docker rm $CONTAINER_NAME
+
+sudo docker run --name $CONTAINER_NAME --privileged -i -t -d -p 8080:8080 -v /etc/localtime:/etc/localtime:ro centos7_nextra /sbin/init
+
+# Run broker and rpcjava 2 samples
+sudo docker exec $CONTAINER_NAME /bin/bash -c "cd /home/nextra/build/Nextra/install/linux.x86_64/samples/nextra-rest-server/java/standard && ./fly.sh" &
+sleep 2
+
+# Run nextra-rest-server 
+sudo docker exec $CONTAINER_NAME /bin/bash -c "cd /tmp && nextra-rest-server.sh" &
+
+#sudo docker exec $CONTAINER_NAME /bin/bash -c "cd /home/nextra/build/Nextra/install/linux.x86_64/samples/nextra-rest-server/java/standard && broker -e broker.env -bg" &

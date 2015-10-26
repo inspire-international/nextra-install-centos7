@@ -1,6 +1,6 @@
-# Nextra6 for CentOS 7 in Docker
+# Nextra6.5 for CentOS 7 in Docker
 
-This will create a CentOS 7 Docker image in which Nextra6 is installed.
+This will create a CentOS 7 Docker image in which Nextra6.5 is installed.
 
 # Prerequisite
 Software: Docker
@@ -50,14 +50,19 @@ Software: Docker
 
 # Test Drive
 
-1) kick the login.sh to log into the container.
+1) nextra-rest-server
 
 ```sh
-    $./login.sh 
+    http://localhost:8080
 ```
 
-2) cd to /home/nextra/samples/queue/java and follow README.txt.
+2) Message Queue
 
+```sh
+    $./login.sh
+    # cd $ODEDIR/../samples/queue/java
+    Then, follow README.txt
+```
 
 [Nextra](http://www.inspire-intl.com/product/product_nextra.html)
 
